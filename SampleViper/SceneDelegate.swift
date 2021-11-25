@@ -18,12 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
      
         
+//        if let windowScene = scene as? UIWindowScene {
+//                let window = UIWindow(windowScene: windowScene)
+//                self.window = window
+//                let wireframe = CounterWireframe(window: window)
+//                wireframe.setUpVIPERWithViewController()
+//                window.makeKeyAndVisible()
+//        }
+        
+        
         if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 self.window = window
-                let wireframe = CounterWireframe(window: window)
-                wireframe.setUpVIPERWithViewController()
-                window.makeKeyAndVisible()
+                let router = TodoListRouter()
+                 
+            let todoListView = router.createrTodoListModule()
+            
+                  window.rootViewController = UINavigationController(rootViewController: todoListView) 
+                   window.makeKeyAndVisible()
         }
     }
 
