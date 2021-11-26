@@ -27,14 +27,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        }
         
         
+//        if let windowScene = scene as? UIWindowScene {
+//                let window = UIWindow(windowScene: windowScene)
+//                self.window = window
+//
+//
+//                let router = TodoListRouter()
+//
+//            let todoListView = router.createrTodoListModule()
+//
+//                  window.rootViewController = UINavigationController(rootViewController: todoListView)
+//                   window.makeKeyAndVisible()
+//        }
+        
         if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 self.window = window
-                let router = TodoListRouter()
-                 
-            let todoListView = router.createrTodoListModule()
             
-                  window.rootViewController = UINavigationController(rootViewController: todoListView) 
+            
+                let router = LoginRouter()
+                 
+               let view = router.createLoginRouterModule()
+            
+                  window.rootViewController = UINavigationController(rootViewController: view)
                    window.makeKeyAndVisible()
         }
     }

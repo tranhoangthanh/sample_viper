@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E259B8BF275071E000845469 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8BD275071E000845469 /* LoginViewController.swift */; };
+		E259B8C0275071E000845469 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E259B8BE275071E000845469 /* LoginViewController.xib */; };
+		E259B8C32750720500845469 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8C22750720500845469 /* LoginView.swift */; };
+		E259B8C62750733D00845469 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8C52750733D00845469 /* LoginPresenter.swift */; };
+		E259B8C92750738900845469 /* LoginInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8C82750738900845469 /* LoginInteractorIO.swift */; };
+		E259B8CC2750764E00845469 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8CB2750764E00845469 /* LoginEntity.swift */; };
+		E259B8CE275076D200845469 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8CD275076D100845469 /* LoginInteractor.swift */; };
+		E259B8D127507C9C00845469 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8D027507C9C00845469 /* LoginRouter.swift */; };
 		E29DA80E274F6D7500395805 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA80D274F6D7500395805 /* TodoListViewController.swift */; };
 		E29DA811274F6DD400395805 /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA810274F6DD400395805 /* TodoListPresenter.swift */; };
 		E29DA814274F6DFF00395805 /* TodoListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA813274F6DFF00395805 /* TodoListInteractorIO.swift */; };
@@ -38,6 +46,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E259B8BD275071E000845469 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E259B8BE275071E000845469 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E259B8C22750720500845469 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E259B8C52750733D00845469 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		E259B8C82750738900845469 /* LoginInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorIO.swift; sourceTree = "<group>"; };
+		E259B8CB2750764E00845469 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		E259B8CD275076D100845469 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		E259B8D027507C9C00845469 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		E29DA80D274F6D7500395805 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		E29DA810274F6DD400395805 /* TodoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
 		E29DA813274F6DFF00395805 /* TodoListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractorIO.swift; sourceTree = "<group>"; };
@@ -81,6 +97,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E259B8BB2750700400845469 /* Viper_Counter */ = {
+			isa = PBXGroup;
+			children = (
+				E2C822B9274F2DC8004BBBA0 /* Interactor */,
+				E2C822B5274F2DC8004BBBA0 /* View */,
+				E2C822B3274F2DC8004BBBA0 /* Wireframe */,
+				E2C822B1274F2DC8004BBBA0 /* Presenter */,
+				E2C822AF274F2DC8004BBBA0 /* Entity */,
+			);
+			path = Viper_Counter;
+			sourceTree = "<group>";
+		};
+		E259B8BC275070E700845469 /* Login_Viper */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8CF27507C8A00845469 /* Router */,
+				E259B8CA2750763000845469 /* Entity */,
+				E259B8C72750735900845469 /* Interactor */,
+				E259B8C42750731400845469 /* Presenter */,
+				E259B8C1275071F500845469 /* View */,
+			);
+			path = Login_Viper;
+			sourceTree = "<group>";
+		};
+		E259B8C1275071F500845469 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8BE275071E000845469 /* LoginViewController.xib */,
+				E259B8BD275071E000845469 /* LoginViewController.swift */,
+				E259B8C22750720500845469 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E259B8C42750731400845469 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8C52750733D00845469 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E259B8C72750735900845469 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8C82750738900845469 /* LoginInteractorIO.swift */,
+				E259B8CD275076D100845469 /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E259B8CA2750763000845469 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8CB2750764E00845469 /* LoginEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E259B8CF27507C8A00845469 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8D027507C9C00845469 /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		E29DA7D4274F38BD00395805 /* Viper_Todo */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +300,8 @@
 		E2C82299274F2DB1004BBBA0 /* SampleViper */ = {
 			isa = PBXGroup;
 			children = (
+				E259B8BC275070E700845469 /* Login_Viper */,
+				E259B8BB2750700400845469 /* Viper_Counter */,
 				E29DA7D4274F38BD00395805 /* Viper_Todo */,
 				E2C8229A274F2DB1004BBBA0 /* AppDelegate.swift */,
 				E2C822AE274F2DC8004BBBA0 /* Controller */,
@@ -233,11 +318,6 @@
 		E2C822AE274F2DC8004BBBA0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E2C822AF274F2DC8004BBBA0 /* Entity */,
-				E2C822B1274F2DC8004BBBA0 /* Presenter */,
-				E2C822B3274F2DC8004BBBA0 /* Wireframe */,
-				E2C822B5274F2DC8004BBBA0 /* View */,
-				E2C822B9274F2DC8004BBBA0 /* Interactor */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +425,7 @@
 			files = (
 				E29DA824274F7BB700395805 /* TodoDetailViewController.xib in Resources */,
 				E2C822C0274F2DC8004BBBA0 /* HomeController.xib in Resources */,
+				E259B8C0275071E000845469 /* LoginViewController.xib in Resources */,
 				E2C822A7274F2DB3004BBBA0 /* LaunchScreen.storyboard in Resources */,
 				E2C822A4274F2DB3004BBBA0 /* Assets.xcassets in Resources */,
 				E2C822A2274F2DB1004BBBA0 /* Main.storyboard in Resources */,
@@ -361,15 +442,21 @@
 				E29DA819274F6EBD00395805 /* TodoListInteractor.swift in Sources */,
 				E29DA829274F7DD100395805 /* TodoDetailPresenter.swift in Sources */,
 				E29DA80E274F6D7500395805 /* TodoListViewController.swift in Sources */,
+				E259B8CE275076D200845469 /* LoginInteractor.swift in Sources */,
 				E2C822BD274F2DC8004BBBA0 /* CounterPresenter.swift in Sources */,
 				E2C822C3274F2DC8004BBBA0 /* CounterInteractorIO.swift in Sources */,
 				E29DA82C274F7DEC00395805 /* TodoDetailInteractor.swift in Sources */,
 				E2C8229F274F2DB1004BBBA0 /* ViewController.swift in Sources */,
+				E259B8D127507C9C00845469 /* LoginRouter.swift in Sources */,
+				E259B8C92750738900845469 /* LoginInteractorIO.swift in Sources */,
 				E29DA81E274F76E200395805 /* TodoListRouter.swift in Sources */,
+				E259B8C62750733D00845469 /* LoginPresenter.swift in Sources */,
 				E2C822BF274F2DC8004BBBA0 /* HomeController.swift in Sources */,
 				E29DA81B274F70AF00395805 /* TodoListView.swift in Sources */,
 				E2C8229B274F2DB1004BBBA0 /* AppDelegate.swift in Sources */,
 				E2C822BE274F2DC8004BBBA0 /* CounterWireframe.swift in Sources */,
+				E259B8BF275071E000845469 /* LoginViewController.swift in Sources */,
+				E259B8C32750720500845469 /* LoginView.swift in Sources */,
 				E2C8229D274F2DB1004BBBA0 /* SceneDelegate.swift in Sources */,
 				E29DA82E274F7E3200395805 /* TodoDetailInteractorIO.swift in Sources */,
 				E2C822BC274F2DC8004BBBA0 /* CounterEntity.swift in Sources */,
@@ -380,6 +467,7 @@
 				E29DA831274F81C900395805 /* TodoDetailRouter.swift in Sources */,
 				E29DA811274F6DD400395805 /* TodoListPresenter.swift in Sources */,
 				E2C822C1274F2DC8004BBBA0 /* CounterView.swift in Sources */,
+				E259B8CC2750764E00845469 /* LoginEntity.swift in Sources */,
 				E29DA823274F7BB700395805 /* TodoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
