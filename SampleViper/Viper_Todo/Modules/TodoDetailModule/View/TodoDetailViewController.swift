@@ -23,7 +23,7 @@ class TodoDetailViewController: UIViewController {
         let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteTapped))
         self.navigationItem.rightBarButtonItems  =  [editBarButtonItem,deleteBarButtonItem]
         
-        // Do any additional setup after loading the view.
+    
     }
     
     

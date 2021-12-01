@@ -11,7 +11,7 @@ class TodoDetailInteractor {
     
     weak var presenter : TodoDetailInteractorOutput?
     var todoItem: TodoItem
-    var todoStore = TodoStore.shared
+    
     
     init(todoItem : TodoItem) {
         self.todoItem = todoItem
@@ -25,15 +25,16 @@ extension TodoDetailInteractor : TodoDetailInteractorInput {
    
     
     func deleteTodo() {
-
-        todoStore.removeTodo(todoItem)
+        let dataStore = CoreDataManager.shared
+        dataStore.deleteTodoItem(todoItem)
         presenter?.didDeleteTodo()
     }
     
     func editTodo(title: String, content: String) {
-
+        let dataStore = CoreDataManager.shared
         todoItem.title = title
         todoItem.content = content
+        dataStore.save()
         presenter?.didEditTodo(todoItem)
     }
     

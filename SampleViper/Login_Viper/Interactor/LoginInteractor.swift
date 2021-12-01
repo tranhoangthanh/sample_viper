@@ -17,10 +17,12 @@ class LoginInteractor  {
 extension LoginInteractor : LoginInteractorInput {
     
     func login(_ entity: LoginEntity) {
-        if entity.gmail.isEmpty || entity.password.isEmpty {
+        if entity.gmail!.isEmpty || entity.password!.isEmpty {
             presenter?.onError(message: "Can dien du thong tin")
             return
         }
+        let dataStore = CoreDataManager.shared
+        dataStore.save()
         presenter?.showTotoList()
     }
     

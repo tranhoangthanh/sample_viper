@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import CoreData
 
 protocol TodoListInteractorInput {
    
     func retrieveTodos()
     func saveTodo(_ todo: TodoItem)
     func deleteTodo(_ todo: TodoItem)
+    func logOut()
 }
 
 
@@ -20,4 +22,5 @@ protocol TodoListInteractorOutput : AnyObject {
     func didRetrieveTodos(_ todos: [TodoItem])
     func didRemoveTodo(_ todo: TodoItem)
     func didAddTodo(_ todo: TodoItem)
+    func didlogOut()
 }

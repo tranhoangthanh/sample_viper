@@ -32,9 +32,17 @@ class TodoListPresenter {
         interactor?.deleteTodo(todo)
     }
     
+    func logOut() {
+        interactor?.logOut()
+    }
+    
 }
 
 extension TodoListPresenter : TodoListInteractorOutput {
+    func didlogOut() {
+        self.router?.rootLogin()
+    }
+    
     
     func onError(message: String) {
         view?.showErrorMessage(message)
@@ -47,6 +55,11 @@ extension TodoListPresenter : TodoListInteractorOutput {
     func didRemoveTodo(_ todo: TodoItem) {
         interactor?.retrieveTodos()
     }
+    
+    func didAddTodo() {
+        interactor?.retrieveTodos()
+    }
+    
     
     func didAddTodo(_ todo: TodoItem) {
         interactor?.retrieveTodos()

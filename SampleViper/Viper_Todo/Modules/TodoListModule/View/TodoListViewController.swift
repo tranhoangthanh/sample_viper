@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class TodoListViewControler : UITableViewController {
     var presenter: TodoListPresenter?
@@ -18,7 +19,11 @@ class TodoListViewControler : UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setupView()
         
+        let logoutBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logOut))
+        
         let addBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTapped))
+        
+        self.navigationItem.leftBarButtonItem = logoutBarButtonItem
         self.navigationItem.rightBarButtonItem  =  addBarButtonItem
         
     }
@@ -28,6 +33,10 @@ class TodoListViewControler : UITableViewController {
         self.presenter?.viewWillAppear()
     }
     
+    @objc func logOut() {
+        self.presenter?.logOut()
+        
+    }
    @objc func addTapped() {
         let alertController = UIAlertController(title: "Add Todo Item", message: "Enter title and content", preferredStyle: .alert)
         alertController.addTextField(configurationHandler: nil)
@@ -36,8 +45,13 @@ class TodoListViewControler : UITableViewController {
             let titleText = alertController.textFields![0].text ?? ""
             let contentText = alertController.textFields![1].text ?? ""
             guard !titleText.isEmpty else { return }
-            let todoItem = TodoItem(title: titleText, content: contentText)
-            self?.presenter?.addTodo(todoItem)
+            
+            let dataStore = CoreDataManager.shared
+            let newEntry = dataStore.newTodoItem()
+            newEntry.title = titleText
+            newEntry.content = contentText
+    
+            self?.presenter?.addTodo(newEntry)
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

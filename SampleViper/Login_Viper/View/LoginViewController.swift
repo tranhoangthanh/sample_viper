@@ -18,15 +18,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
 
 
     @IBAction func login(_ sender: Any) {
         let gmail = gmailTf.text ?? ""
         let pass = passwordTf.text ?? ""
-        let entity = LoginEntity(gmail: gmail, password: pass)
-        presenter?.loginWith(entity)
+        let dataStore = CoreDataManager.shared
+        let newEntry = dataStore.newLoginEntity()
+        newEntry.gmail = gmail
+        newEntry.password = pass
+        presenter?.loginWith(newEntry)
     }
     
 }

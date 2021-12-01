@@ -27,6 +27,19 @@ class TodoListRouter {
         
     }
     
+  
+    func rootLogin() {
+        let router = LoginRouter()
+        let vc = router.checkLogin()
+        
+        if let keyWindow = UIWindow.key {
+            // Do something
+            keyWindow.rootViewController = vc
+        }
+        
+    }
+    
+    
     
     func presentToDoDetailScreen(view: TodoListView, todo: TodoItem) {
         let router = TodoDetailRouter()

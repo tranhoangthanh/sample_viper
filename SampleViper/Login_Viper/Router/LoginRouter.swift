@@ -11,6 +11,20 @@ import UIKit
 
 class LoginRouter {
     
+    func checkLogin()  -> UIViewController {
+        let items = CoreDataManager.shared.fetchLoginEntity()
+        if !items.isEmpty {
+            let router = TodoListRouter()
+            
+            let vc = router.createrTodoListModule()
+          
+            return vc
+        } else {
+            return createLoginRouterModule()
+        }
+    }
+    
+    
     func createLoginRouterModule() -> UIViewController {
         let view = LoginViewController()
         let presenter = LoginPresenter()

@@ -15,6 +15,8 @@
 		E259B8CC2750764E00845469 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8CB2750764E00845469 /* LoginEntity.swift */; };
 		E259B8CE275076D200845469 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8CD275076D100845469 /* LoginInteractor.swift */; };
 		E259B8D127507C9C00845469 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8D027507C9C00845469 /* LoginRouter.swift */; };
+		E259B8F62754BDD300845469 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259B8F52754BDD300845469 /* CoreDataManager.swift */; };
+		E259B8F92754BEAD00845469 /* demo_data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E259B8F72754BEAD00845469 /* demo_data.xcdatamodeld */; };
 		E29DA80E274F6D7500395805 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA80D274F6D7500395805 /* TodoListViewController.swift */; };
 		E29DA811274F6DD400395805 /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA810274F6DD400395805 /* TodoListPresenter.swift */; };
 		E29DA814274F6DFF00395805 /* TodoListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DA813274F6DFF00395805 /* TodoListInteractorIO.swift */; };
@@ -54,6 +56,8 @@
 		E259B8CB2750764E00845469 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		E259B8CD275076D100845469 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		E259B8D027507C9C00845469 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		E259B8F52754BDD300845469 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E259B8F82754BEAD00845469 /* demo_data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = demo_data.xcdatamodel; sourceTree = "<group>"; };
 		E29DA80D274F6D7500395805 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		E29DA810274F6DD400395805 /* TodoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
 		E29DA813274F6DFF00395805 /* TodoListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractorIO.swift; sourceTree = "<group>"; };
@@ -162,6 +166,15 @@
 				E259B8D027507C9C00845469 /* LoginRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		E259B8F42754BCE800845469 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E259B8F52754BDD300845469 /* CoreDataManager.swift */,
+				E259B8F72754BEAD00845469 /* demo_data.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		E29DA7D4274F38BD00395805 /* Viper_Todo */ = {
@@ -300,11 +313,11 @@
 		E2C82299274F2DB1004BBBA0 /* SampleViper */ = {
 			isa = PBXGroup;
 			children = (
+				E259B8F42754BCE800845469 /* CoreData */,
 				E259B8BC275070E700845469 /* Login_Viper */,
 				E259B8BB2750700400845469 /* Viper_Counter */,
 				E29DA7D4274F38BD00395805 /* Viper_Todo */,
 				E2C8229A274F2DB1004BBBA0 /* AppDelegate.swift */,
-				E2C822AE274F2DC8004BBBA0 /* Controller */,
 				E2C8229C274F2DB1004BBBA0 /* SceneDelegate.swift */,
 				E2C8229E274F2DB1004BBBA0 /* ViewController.swift */,
 				E2C822A0274F2DB1004BBBA0 /* Main.storyboard */,
@@ -313,13 +326,6 @@
 				E2C822A8274F2DB3004BBBA0 /* Info.plist */,
 			);
 			path = SampleViper;
-			sourceTree = "<group>";
-		};
-		E2C822AE274F2DC8004BBBA0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		E2C822AF274F2DC8004BBBA0 /* Entity */ = {
@@ -450,6 +456,8 @@
 				E259B8D127507C9C00845469 /* LoginRouter.swift in Sources */,
 				E259B8C92750738900845469 /* LoginInteractorIO.swift in Sources */,
 				E29DA81E274F76E200395805 /* TodoListRouter.swift in Sources */,
+				E259B8F62754BDD300845469 /* CoreDataManager.swift in Sources */,
+				E259B8F92754BEAD00845469 /* demo_data.xcdatamodeld in Sources */,
 				E259B8C62750733D00845469 /* LoginPresenter.swift in Sources */,
 				E2C822BF274F2DC8004BBBA0 /* HomeController.swift in Sources */,
 				E29DA81B274F70AF00395805 /* TodoListView.swift in Sources */,
@@ -688,6 +696,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E259B8F72754BEAD00845469 /* demo_data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E259B8F82754BEAD00845469 /* demo_data.xcdatamodel */,
+			);
+			currentVersion = E259B8F82754BEAD00845469 /* demo_data.xcdatamodel */;
+			path = demo_data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2C8228F274F2DB1004BBBA0 /* Project object */;
 }

@@ -43,15 +43,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 self.window = window
-            
-            
-                let router = LoginRouter()
-                 
-               let view = router.createLoginRouterModule()
-            
-                  window.rootViewController = UINavigationController(rootViewController: view)
-                   window.makeKeyAndVisible()
+                 self.setVC()
         }
+    }
+    
+    func setVC() {
+        let router = LoginRouter()
+         
+        let view = router.checkLogin()
+    
+        window?.rootViewController = UINavigationController(rootViewController: view)
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -85,3 +87,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+}

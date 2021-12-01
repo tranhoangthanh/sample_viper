@@ -6,36 +6,46 @@
 //
 
 import Foundation
+import CoreData
 
 class TodoListInteractor {
     
     weak var presenter : TodoListInteractorOutput?
-    var todoStore = TodoStore.shared
-    var items : [TodoItem] {
-        return todoStore.todos
-    }
+   
+    var items : [TodoItem] = []
     
     
 }
 
 extension TodoListInteractor : TodoListInteractorInput {
     
-    
+    func logOut() {
+        let dataStore = CoreDataManager.shared
+        dataStore.deleteLoginEntity()
+        
+        presenter?.didlogOut()
+    }
     func retrieveTodos() {
+        items = CoreDataManager.shared.fetchTodo()
         presenter?.didRetrieveTodos(items)
     }
     
+    
+    
     func saveTodo(_ todo: TodoItem) {
-        if todo.content.isEmpty || todo.title.isEmpty {
+        if  todo.title!.isEmpty || todo.content!.isEmpty {
             presenter?.onError(message: "Can dien du thong tin")
             return
         }
-        todoStore.addTodo(todo)
+        let dataStore = CoreDataManager.shared
+        dataStore.save()
         presenter?.didAddTodo(todo)
+      
     }
     
-    func deleteTodo(_ todo: TodoItem) {
-        todoStore.removeTodo(todo)
+    func deleteTodo(_ todo:TodoItem) {
+        let dataStore = CoreDataManager.shared
+        dataStore.deleteTodoItem(todo)
         presenter?.didRemoveTodo(todo)
     }
     
